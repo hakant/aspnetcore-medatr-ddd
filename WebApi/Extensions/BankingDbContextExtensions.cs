@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
 
-namespace Data
+namespace BankingDomain.Data
 {
-    public static class DbContextExtensions
+    public static class BankingDbContextExtensions
     {
-        public static Task Seed(this AppContext context)
+        public static Task Seed(this BankingDbContext context)
         {
             context.Bankers.Add(new Banker
             {
@@ -18,7 +18,6 @@ namespace Data
                 Id = "Client1",
                 RelatedBankerId = "Banker1",
                 Name = "James Bond",
-                Address = "Dam Square 123, Amsterdam",
                 NetWorth = 27340677
             });
 

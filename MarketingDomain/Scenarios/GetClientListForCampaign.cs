@@ -1,20 +1,16 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using System.Collections.Generic;
-
-using Data;
+using System.Threading;
+using System.Threading.Tasks;
+using MarketingDomain.Data;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
-namespace BankingDomain.Scenarios
+namespace MarketingDomain.Scenarios
 {
-    public static class GetBankerClientList
+    public static class GetClientListForCampaign
     {
         public class Request : IRequest<Response>
-        {
-            public string BankerId { get; set; }
-        }
+        { }
 
         public class Response
         {
@@ -23,17 +19,16 @@ namespace BankingDomain.Scenarios
 
         public class Handler : IRequestHandler<Request, Response>
         {
-            private readonly AppContext _context;
+            private readonly MarketingDbContext _context;
 
-            public Handler(AppContext context)
+            public Handler(MarketingDbContext context)
             {
                 _context = context;
             }
 
             public async Task<Response> Handle(Request request, CancellationToken token)
             {
-                var clients = await _context.Clients.Where(c => c.RelatedBankerId == request.BankerId).ToListAsync();
-
+                var clients = await _context.Clients.ToListAsync();
 
                 return new Response
                 {

@@ -1,5 +1,7 @@
 ﻿using Data;
 using MediatR;
+using BankingDomain.Data;
+using MarketingDomain.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +23,8 @@ namespace WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppContext>(opt => opt.UseInMemoryDatabase("AppDatabase"));
+            services.AddDbContext<BankingDbContext>(opt => opt.UseInMemoryDatabase("AppDatabase"));
+            services.AddDbContext<MarketingDbContext>(opt => opt.UseInMemoryDatabase("AppDatabase"));
             services.AddMvc();
             services.AddMediatR(
                 System.Reflection.Assembly.Load("MarketingDomain"),
@@ -29,7 +33,12 @@ namespace WebApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, AppContext context)
+        public void Configure(
+            IApplicationBuilder app, 
+            IHostingEnvironment env, 
+            AppContext appContext,
+            BankingDbContext bankingDbContext,
+            MarketingDbContext marketingDbContext)
         {
             if (env.IsDevelopment())
             {
@@ -38,7 +47,9 @@ namespace WebApi
 
             app.UseMvc();
 
-            context.Seed().Wait();
+            appContext.Seed().Wait();
+            bankingDbContext.Seed().Wait();
+            marketingDbContext.Seed().Wait();
         }
     }
 }

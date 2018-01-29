@@ -4,9 +4,9 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{82BAFE14-9EFD-49E0-A57A-B13C25F11AAC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarketingDomain", "Domain-A\MarketingDomain.csproj", "{A654F701-1BDF-45A7-9154-480DAD1A2BBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarketingDomain", "MarketingDomain\MarketingDomain.csproj", "{A654F701-1BDF-45A7-9154-480DAD1A2BBA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankingDomain", "Domain-B\BankingDomain.csproj", "{8FD300E5-9E30-4EB5-B3BF-37681E1D0CA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankingDomain", "BankingDomain\BankingDomain.csproj", "{8FD300E5-9E30-4EB5-B3BF-37681E1D0CA1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{67CED251-D33A-4781-AC77-EF5CBE144835}"
 EndProject
