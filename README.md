@@ -7,4 +7,4 @@
   * Separating the application into multiple domains (DDD) each containing their own 
     * scenarios (request, response and handlers)
     * subset of the data context (only the parts that are relevant to the domain)
-    * entities - event only the properties of entites that are interesting for the domain
+    * entities - even only the properties of entites that are interesting for the domain
