@@ -1,17 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 using MediatR;
 
-namespace DomainA.Scenarios.HelloWorld
+namespace MarketingDomain.Scenarios
 {
-    public static class GetHelloWorld
+    public static class HelloWorld
     {
-        public class Request : IRequest<GetHelloWorld.Response>
+        public class Request : IRequest<Response>
         {
             public string Name { get; set; }
         }

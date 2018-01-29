@@ -10,7 +10,9 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="4.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="4.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,8 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain-A\Domain-A.csproj" />
-    <ProjectReference Include="..\Domain-B\Domain-B.csproj" />
+    <ProjectReference Include="..\Data\Data.csproj" />
+    <ProjectReference Include="..\Domain-A\MarketingDomain.csproj" />
+    <ProjectReference Include="..\Domain-B\BankingDomain.csproj" />
   </ItemGroup>
 
 </Project>
