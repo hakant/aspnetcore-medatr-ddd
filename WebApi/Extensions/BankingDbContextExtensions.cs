@@ -2,6 +2,10 @@
 
 namespace BankingDomain.Data
 {
+    /// <summary>
+    /// Normally I shouldn't need these extra Seed methods
+    /// But somehow InMemoryContext won't let me share data across contexts
+    /// </summary>
     public static class BankingDbContextExtensions
     {
         public static Task Seed(this BankingDbContext context)

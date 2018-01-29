@@ -48,6 +48,9 @@ namespace WebApi
             app.UseMvc();
 
             appContext.Seed().Wait();
+
+            // Normally I shouldn't need these extra Seed methods
+            // But somehow UseInMemoryDatabase won't let me share data across contexts
             bankingDbContext.Seed().Wait();
             marketingDbContext.Seed().Wait();
         }
